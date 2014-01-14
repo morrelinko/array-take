@@ -6,6 +6,7 @@ Some create an extra array that stores the elements that are expected and do lot
 of isset checking on the original array.
 
 For example, if you wanted to retrieve some values from forms, you may do something like this:
+(This is just an example)
 
 	<?php
 
