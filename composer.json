@@ -1,0 +1,18 @@
+{
+    "name": "morrelinko/array-get",
+    "description": "Function for quick array item/items retrieval.",
+    "keywords": ["array", "assoc-array", "hash-map"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Morrison Laju",
+            "email": "laju@netaviva.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "files": ["src/array_take.php"]
+    }
+}
