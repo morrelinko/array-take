@@ -7,17 +7,17 @@ class ArrayTakeTest extends \PHPUnit_Framework_TestCase
 {
     public function testBasic()
     {
-        $array = [
+        $array = array(
             "username" => "morrelinko",
             "password" => "xxxxxx",
             "somekey" => "somevalue"
-        ];
+        );
 
-        $expected = [
+        $expected = array(
             "username" => "morrelinko",
             "password" => "xxxxxx",
-        ];
+        );
 
-        $this->assertSame(array_take($array, ["username", "password"]), $expected);
+        $this->assertSame(array_take($array, array("username", "password")), $expected);
     }
 }
