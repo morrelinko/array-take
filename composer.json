@@ -1,18 +1,24 @@
 {
-    "name": "morrelinko/array-get",
-    "description": "Function for quick array item/items retrieval.",
-    "keywords": ["array", "assoc-array", "hash-map"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Laju Morrison",
-            "email": "morrelinko@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.3"
-    },
-    "autoload": {
-        "files": ["src/array_take.php"]
+  "name": "morrelinko/array-take",
+  "description": "Function for quick array item/items retrieval.",
+  "keywords": [
+    "array",
+    "assoc-array",
+    "hash-map"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Laju Morrison",
+      "email": "morrelinko@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "files": [
+      "src/array_take.php"
+    ]
+  }
 }
