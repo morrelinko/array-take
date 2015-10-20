@@ -2,22 +2,32 @@
 
 namespace Morrelinko;
 
-function array_take(array $from, $keys, $includeEmpty = true)
+function array_take(array $from, $keys, $options = [])
 {
+    $options = array_merge([
+        'includeEmpty' => true,
+        'ignoreMissingKeys' => true
+    ], $options);
+
     // Checks if the array is a list
     if (array_values($from) === $from) {
-        return array_map(function ($item) use ($keys, $includeEmpty) {
-            return array_take($item, $keys, $includeEmpty);
+        return array_map(function ($item) use ($keys, $options) {
+            return array_take($item, $keys, $options);
         }, $from);
     }
 
     $retrieved = array();
 
     array_walk($keys,
-        function (&$value, $index, $retrieved) use ($from, $includeEmpty) {
+        function (&$value, $index, $retrieved) use ($from, $options) {
             if (is_int($index) && !($value instanceof \Closure)) $index = $value;
+
+            if (!array_key_exists($index, $from) && !$options['ignoreMissingKeys']) {
+                $from[$index] = null;
+            }
+
             if (array_key_exists($index, $from) &&
-                ($includeEmpty || ($includeEmpty == false &&
+                ($options['includeEmpty'] || ($options['includeEmpty'] == false &&
                         !empty($from[$index])))
             ) {
                 if ($value instanceof \Closure) {
